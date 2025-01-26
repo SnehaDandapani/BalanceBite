@@ -1,7 +1,7 @@
 # BalanceBite
 ## Basic Details
 
-### HackHerWay
+###Team Name: **HackHerWay**
 
 ### Team Members
 - Member 1:Sneha D - NSS College of Engineering, Palakkad
@@ -49,21 +49,30 @@ BalanceBite simplifies nutrition tracking by analyzing your meals and workouts t
 #### Project Documentation
 
 ## Screenshots
-images/projectimg.jpg
+![Home Page](images/homenutriai.jpg)
+![Input page 1](images/input1.jpg)
+![Input page 2](images/input2.jpg)
+![Output Page 1](images/output1.jpg)
+![Output Page 2](images/output2.jpg)
 
 
 ## Diagrams
+![Workflow diagram](images/workflow.jpg)
+
 
 ## Build Photos
+![Team photo](images/projectimg.jpg)
 
 
 #### Project Demo
 
 ## Video
+[Click here to watch the video](video/working.mp4)
+
 
 ## Additional Demos
 
-###Team Contributions
+### Team Contributions
 * Sneha D: Led the web development, building and integrating the website's core features.
 * Karunya S: Focused on designing the user interface to ensure a seamless and engaging user experience.
 * Mihikka S: Responsible for analyzing the problem and creating flowcharts to guide the development process.
