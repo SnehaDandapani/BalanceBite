@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Nutrition Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f9fc;
+      text-align: center;
+      color: #333;
+    }
+
+    h1 {
+      background-color: #4CAF50;
+      color: white;
+      margin: 0;
+      padding: 20px;
+      font-size: 2rem;
+    }
+
+    .container {
+      margin: 20px auto;
+      padding: 20px;
+      max-width: 700px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .question {
+      margin: 20px 0;
+      font-size: 1.2rem;
+      color: #444;
+      text-align: left;
+    }
+
+    select {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f4f4f4;
+      transition: border-color 0.3s;
+    }
+
+    select:focus {
+      outline: none;
+      border-color: #4CAF50;
+    }
+
+    button {
+      margin: 20px 0;
+      padding: 10px 20px;
+      font-size: 16px;
+      color: white;
+      background-color: #4CAF50;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    button:hover {
+      background-color: #45a049;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <h1>Fuel Your Health</h1>
+  <div class="container">
+    <form id="quiz-form">
+      <div class="question">1. Which fruits added sweetness to your meals today?</div>
+      <select name="fruits" id="fruits" multiple>
+        <option value="apple">Apple</option>
+        <option value="banana">Banana</option>
+        <option value="orange">Orange</option>
+        <option value="avocado">Avocado</option>
+        <option value="strawberry">Strawberry</option>
+      </select>
+
+      <div class="question">2. Time for greens! Did you eat any vegetables?</div>
+      <select name="vegetables" id="vegetables" multiple>
+        <option value="carrot">Carrot</option>
+        <option value="spinach">Spinach</option>
+        <option value="broccoli">Broccoli</option>
+        <option value="potato">Potato</option>
+        <option value="cucumber">Cucumber</option>
+      </select>
+
+      <div class="question">3. Which dairy products did you enjoy today?</div>
+      <select name="dairy" id="dairy" multiple>
+        <option value="milk">Milk</option>
+        <option value="cheese">Cheese</option>
+        <option value="yogurt">Yogurt</option>
+        <option value="butter">Butter</option>
+        <option value="cream">Cream</option>
+      </select>
+
+      <div class="question">4. Which protein-packed foods powered your day?</div>
+      <select name="protein" id="protein" multiple>
+        <option value="egg">Egg</option>
+        <option value="chicken">Chicken</option>
+        <option value="salmon">Salmon</option>
+        <option value="beef">Beef</option>
+        <option value="tofu">Tofu</option>
+      </select>
+
+      <div class="question">5. Which of these grains or nuts added energy to your day?</div>
+      <select name="grains" id="grains" multiple>
+        <option value="rice">Rice</option>
+        <option value="bread">Bread</option>
+        <option value="oats">Oats</option>
+        <option value="almond">Almond</option>
+        <option value="walnut">Walnut</option>
+      </select>
+
+      <button type="button" onclick="redirectToAnalysis()">Go</button>
+    </form>
+  </div>
+
+  <script>
+    const foodDatabase = {
+      apple: { calories: 52, protein: 0.3, fat: 0.2, carbs: 14, fiber: 2.4 },
+      banana: { calories: 89, protein: 1.1, fat: 0.3, carbs: 23, fiber: 2.6 },
+      carrot: { calories: 41, protein: 0.9, fat: 0.2, carbs: 10, fiber: 2.8 },
+      spinach: { calories: 23, protein: 2.9, fat: 0.4, carbs: 3.6, fiber: 2.2 },
+      broccoli: { calories: 55, protein: 3.7, fat: 0.6, carbs: 11, fiber: 2.6 },
+      milk: { calories: 42, protein: 3.4, fat: 1, carbs: 5, fiber: 0 },
+      rice: { calories: 130, protein: 2.7, fat: 0.3, carbs: 28, fiber: 0.4 },
+    };
+
+    function calculateTotals() {
+      const selectedFoods = [
+        ...Array.from(document.getElementById("fruits").selectedOptions),
+        ...Array.from(document.getElementById("vegetables").selectedOptions),
+        ...Array.from(document.getElementById("dairy").selectedOptions),
+        ...Array.from(document.getElementById("protein").selectedOptions),
+        ...Array.from(document.getElementById("grains").selectedOptions),
+      ].map(option => option.value);
+
+      const totals = { calories: 0, protein: 0, fat: 0, carbs: 0, fiber: 0 };
+
+      selectedFoods.forEach(food => {
+        if (foodDatabase[food]) {
+          const data = foodDatabase[food];
+          totals.calories += data.calories;
+          totals.protein += data.protein;
+          totals.fat += data.fat;
+          totals.carbs += data.carbs;
+          totals.fiber += data.fiber;
+        }
+      });
+
+      return totals;
+    }
+
+    function redirectToAnalysis() {
+      const totals = calculateTotals();
+      const url = index9.html?calories=${totals.calories}&protein=${totals.protein}&fat=${totals.fat}&carbs=${totals.carbs}&fiber=${totals.fiber};
+      window.location.href = url;
+    }
+  </script>
+</body>
+</html>
