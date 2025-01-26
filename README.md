@@ -1,7 +1,7 @@
 # BalanceBite
 ## Basic Details
 
-###Team Name: **HackHerWay**
+### Team Name: **HackHerWay**
 
 ### Team Members
 - Member 1:Sneha D - NSS College of Engineering, Palakkad
